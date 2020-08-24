@@ -9,14 +9,14 @@ ui = fluidPage(
       sliderInput("eps", 
         "Correlation strength", 
         min = 0, max = .8, value = 0),
-      radioButtons("dist", "Distribution:",
+      radioButtons("dist", "Distribution of the data:",
         c("Normal" = "rnorm", "Uniform" = "runif",
         "Log-normal" = "rlnorm", "Exponential" = "rexp")),
     uiOutput("plot_ui")
   ),
   mainPanel(
     plotOutput("plot"),    
-    p("The histogram shows the distribution of 10000 p-values from calling the t-test on a comparison between two groups, each with 10 data points. There is no difference between the statistical distributions of the data between the two groups (in particular, no difference between their means). Thus, the histogram should be flat, corresponding to a uniform distribution of null p-values in [0,1]. You can experiment with different elementary statistical distributions from which the random numbers are drawn, and you can introduce and control the strength of serial correlations between subsequent values."),
+    HTML("The histogram shows the distribution of 10000 p-values from calling the t-test on a comparison between two groups, each with 10 data points. There is no difference between the statistical distributions of the data between the two groups (in particular, no difference between their means). Thus, the histogram should be flat, corresponding to a uniform distribution of null p-values in [0,1]. You can experiment with different elementary statistical distributions from which the random numbers are drawn, and you can introduce and control the strength of serial correlations between subsequent values. <a href='https://github.com/wolfganghuber/t-test-normality-and-independence'>The source code for this app is here: https://github.com/wolfganghuber/t-test-normality-and-independence</a>."),
   )
 ))
 
