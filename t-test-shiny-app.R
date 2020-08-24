@@ -15,7 +15,8 @@ ui = fluidPage(
     uiOutput("plot_ui")
   ),
   mainPanel(
-    plotOutput("plot")
+    plotOutput("plot"),    
+    p("The histogram shows the distribution of 10000 p-values from calling the t-test on a comparison between two groups, each with 10 data points. There is no difference between the statistical distributions of the data between the two groups (in particular, no difference between their means). Thus, the histogram should be flat, corresponding to a uniform distribution of null p-values in [0,1]. You can experiment with different elementary statistical distributions from which the random numbers are drawn, and you can introduce and control the strength of serial correlations between subsequent values."),
   )
 ))
 
